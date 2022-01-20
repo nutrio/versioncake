@@ -1,5 +1,6 @@
 require './spec/rails_helper'
 
+if ActionPack::VERSION::MAJOR < 7
 describe ActionView::PathResolver do
   let(:resolver) { ActionView::PathResolver.new }
 
@@ -39,4 +40,5 @@ describe ActionView::PathResolver do
       it { expect(template_format).to eq 'application/json' }
     end
   end
+end
 end
