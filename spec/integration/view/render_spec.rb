@@ -3,7 +3,9 @@ require './spec/rails_helper'
 describe ActionView::Base do
   let(:path) { ActionView::FileSystemResolver.new('./spec/fixtures') }
   let(:view_paths) { ActionView::PathSet.new([path]) }
-  let(:view) { ActionView::Base.new(view_paths) }
+  # https://github.com/rails/rails/blob/main/actionview/lib/action_view/base.rb#L227
+  # def initialize(lookup_context, assigns, controller) # :nodoc:
+  let(:view) { ActionView::Base.new(view_paths, [], nil) }
   let(:version_override) { nil }
   subject { view.render(template: 'templates/versioned', versions: version_override) }
 

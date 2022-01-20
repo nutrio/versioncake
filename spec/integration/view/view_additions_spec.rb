@@ -43,7 +43,9 @@ describe ActionView::PathResolver do
 end
 else # >= Rails 7
   describe ActionView::FileSystemResolver do
-    let(:resolver) { ActionView::FileSystemResolver.new }
+    # https://github.com/rails/rails/blob/main/actionview/lib/action_view/template/resolver.rb#L90
+    # def initialize(path)
+    let(:resolver) { ActionView::FileSystemResolver.new('') }
 
     context '#extract_handler_and_format' do
       subject(:template_format) do
