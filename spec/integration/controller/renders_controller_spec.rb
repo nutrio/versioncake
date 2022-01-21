@@ -64,7 +64,9 @@ describe RendersController, type: :controller do
       else
         { override_version: 1 }
       end
-      subject(:response_body) { get :index, params_style; response.body }
+      # https://api.rubyonrails.org/classes/ActionController/TestCase.html
+      # def get(action, **args)
+      subject(:response_body) { get :index, *params_style; response.body }
       let(:request_version) { 3 }
 
       it { expect(controller.request_version).to eq 1 }
