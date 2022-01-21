@@ -88,6 +88,15 @@ else # >= Rails 7
     # FIXME: do the rails 7 stuff here...
     #
   end
+
+  ActionView::TemplateDetails::Requested.class_eval do
+    def initialize(locale:, handlers:, formats:, variants:, versions:)
+      #
+      # FIXME: do the rails 7 stuff here...
+      #
+      super()
+    end
+  end
 end
 
 ActionView::Template.class_eval do
