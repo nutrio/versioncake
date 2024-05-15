@@ -51,10 +51,12 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     method_source (1.0.0)
-    mini_portile2 (2.1.0)
+    mini_portile2 (2.8.6)
     minitest (5.15.0)
-    nokogiri (1.6.8.1)
-      mini_portile2 (~> 2.1.0)
+    nokogiri (1.16.5)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    racc (1.7.3)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -116,4 +118,4 @@ DEPENDENCIES
   versioncake!
 
 BUNDLED WITH
-   2.2.15
+   2.4.21
